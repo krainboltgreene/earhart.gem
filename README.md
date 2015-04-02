@@ -1,16 +1,16 @@
-blankgem
+sherpa
 --------
 
-  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/blankgem.gem)
-  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/blankgem.gem)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/blankgem.gem)
-  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/blankgem.gem)
-  - [![Downloads](http://img.shields.io/gem/dtv/blankgem.svg?style=flat-square)](https://rubygems.org/gems/blankgem)
-  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/tags)
-  - [![Releases](http://img.shields.io/github/release/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/releases)
-  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/issues)
+  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/sherpa.gem)
+  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/sherpa.gem)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/sherpa.gem)
+  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/sherpa.gem)
+  - [![Downloads](http://img.shields.io/gem/dtv/sherpa.svg?style=flat-square)](https://rubygems.org/gems/sherpa)
+  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/tags)
+  - [![Releases](http://img.shields.io/github/release/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/releases)
+  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/issues)
   - [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-  - [![Version](http://img.shields.io/gem/v/blankgem.svg?style=flat-square)](https://rubygems.org/gems/blankgem)
+  - [![Version](http://img.shields.io/gem/v/sherpa.svg?style=flat-square)](https://rubygems.org/gems/sherpa)
 
 
 TODO: Write a gem description
@@ -27,7 +27,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "blankgem", "~> 1.0"
+    gem "sherpa", "~> 1.0"
 
 And then execute:
 
@@ -35,7 +35,7 @@ And then execute:
 
 Or install it yourself with:
 
-    $ gem install blankgem
+    $ gem install sherpa
 
 
 Contributing

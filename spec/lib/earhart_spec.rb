@@ -1,5 +1,5 @@
 require "spec_helper"
 
-RSpec.describe Sherpa do
+RSpec.describe Earhart do
 
 end

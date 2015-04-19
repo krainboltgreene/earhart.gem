@@ -2,5 +2,5 @@
 
 source "https://rubygems.org/"
 
-# Specify your gem's dependencies in sherpa.gemspec
+# Specify your gem's dependencies in earhart.gemspec
 gemspec

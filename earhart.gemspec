@@ -2,16 +2,16 @@
 
 lib = File.expand_path(File.join("..", "lib"), __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sherpa/version"
+require "earhart/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "sherpa"
-  spec.version = Sherpa::VERSION
+  spec.name = "earhart"
+  spec.version = Earhart::VERSION
   spec.authors = ["Kurtis Rainbolt-Greene"]
   spec.email = ["me@kurtisrainboltgreene.name"]
-  spec.summary = %q{TODO: Write a gem summary}
+  spec.summary = %q{A pure ruby HTTP router}
   spec.description = spec.summary
-  spec.homepage = "http://krainboltgreene.github.io/sherpa"
+  spec.homepage = "http://krainboltgreene.github.io/earhart"
   spec.license = "MIT"
 
   spec.files = Dir[File.join("lib", "**", "*")]

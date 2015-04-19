@@ -1,16 +1,16 @@
-sherpa
---------
+earhart
+-------
 
-  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/sherpa.gem)
-  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/sherpa.gem)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/sherpa.gem)
-  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/sherpa.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/sherpa.gem)
-  - [![Downloads](http://img.shields.io/gem/dtv/sherpa.svg?style=flat-square)](https://rubygems.org/gems/sherpa)
-  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/tags)
-  - [![Releases](http://img.shields.io/github/release/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/releases)
-  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/sherpa.gem.svg?style=flat-square)](http://github.com/krainboltgreene/sherpa.gem/issues)
+  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/earhart.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/earhart.gem)
+  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/earhart.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/earhart.gem)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/earhart.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/earhart.gem)
+  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/earhart.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/earhart.gem)
+  - [![Downloads](http://img.shields.io/gem/dtv/earhart.svg?style=flat-square)](https://rubygems.org/gems/earhart)
+  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/earhart.gem.svg?style=flat-square)](http://github.com/krainboltgreene/earhart.gem/tags)
+  - [![Releases](http://img.shields.io/github/release/krainboltgreene/earhart.gem.svg?style=flat-square)](http://github.com/krainboltgreene/earhart.gem/releases)
+  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/earhart.gem.svg?style=flat-square)](http://github.com/krainboltgreene/earhart.gem/issues)
   - [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-  - [![Version](http://img.shields.io/gem/v/sherpa.svg?style=flat-square)](https://rubygems.org/gems/sherpa)
+  - [![Version](http://img.shields.io/gem/v/earhart.svg?style=flat-square)](https://rubygems.org/gems/earhart)
 
 
 TODO: Write a gem description
@@ -27,7 +27,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "sherpa", "~> 1.0"
+    gem "earhart", "~> 1.0"
 
 And then execute:
 
@@ -35,7 +35,7 @@ And then execute:
 
 Or install it yourself with:
 
-    $ gem install sherpa
+    $ gem install earhart
 
 
 Contributing

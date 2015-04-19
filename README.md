@@ -13,13 +13,29 @@ earhart
   - [![Version](http://img.shields.io/gem/v/earhart.svg?style=flat-square)](https://rubygems.org/gems/earhart)
 
 
-TODO: Write a gem description
+The `earhart` gem is a stable and precise HTTP routing library.
 
 
 Using
 =====
 
-TODO: Write usage instructions here
+``` ruby
+require "earhart"
+
+Earhart::Router.new do |router|
+  router.map(:accounts) do |endpoint|
+    collection endpoint, :get, Object
+    member endpoint, :get, Object
+    member endpoint, :post, Object
+    member endpoint, :puts, Object
+    member endpoint, :delete, Object
+  end
+
+  router.map(:statuses, header: HeaderMatcher) do
+    collection :get, Object
+  end
+end
+```
 
 
 Installing

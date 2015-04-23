@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Earhart.gem by krainboltgreene</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Earhart.gem</h1>
+      <h2 class="project-tagline">A very fast HTTP pure ruby router</h2>
+      <a href="https://github.com/krainboltgreene/earhart.gem" class="btn">View on GitHub</a>
+      <a href="https://github.com/krainboltgreene/earhart.gem/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/krainboltgreene/earhart.gem/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <ul>
+<li><a href="https://codeclimate.com/github/krainboltgreene/earhart.gem"><img src="http://img.shields.io/codeclimate/github/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Quality"></a></li>
+<li><a href="https://codeclimate.com/github/krainboltgreene/earhart.gem"><img src="http://img.shields.io/codeclimate/coverage/github/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Coverage"></a></li>
+<li><a href="https://travis-ci.org/krainboltgreene/earhart.gem"><img src="http://img.shields.io/travis-ci/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Build"></a></li>
+<li><a href="https://gemnasium.com/krainboltgreene/earhart.gem"><img src="http://img.shields.io/gemnasium/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Dependencies"></a></li>
+<li><a href="https://rubygems.org/gems/earhart"><img src="http://img.shields.io/gem/dtv/earhart.svg?style=flat-square" alt="Downloads"></a></li>
+<li><a href="http://github.com/krainboltgreene/earhart.gem/tags"><img src="http://img.shields.io/github/tag/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Tags"></a></li>
+<li><a href="http://github.com/krainboltgreene/earhart.gem/releases"><img src="http://img.shields.io/github/release/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Releases"></a></li>
+<li><a href="http://github.com/krainboltgreene/earhart.gem/issues"><img src="http://img.shields.io/github/issues/krainboltgreene/earhart.gem.svg?style=flat-square" alt="Issues"></a></li>
+<li><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a></li>
+<li><a href="https://rubygems.org/gems/earhart"><img src="http://img.shields.io/gem/v/earhart.svg?style=flat-square" alt="Version"></a></li>
+</ul>
+
+<p>The <code>earhart</code> gem is a stable and precise HTTP routing library.</p>
+
+<h1>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using</h1>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">"</span>earhart<span class="pl-pds">"</span></span>
+
+<span class="pl-c1">Earhart</span>::<span class="pl-c1">Router</span>.<span class="pl-k">new</span> <span class="pl-k">do </span>|<span class="pl-smi">router</span>|
+  router.map(<span class="pl-c1">:accounts</span>) <span class="pl-k">do </span>|<span class="pl-smi">endpoint</span>|
+    collection endpoint, <span class="pl-c1">:get</span>, <span class="pl-c1">Object</span>
+    member endpoint, <span class="pl-c1">:get</span>, <span class="pl-c1">Object</span>
+    member endpoint, <span class="pl-c1">:post</span>, <span class="pl-c1">Object</span>
+    member endpoint, <span class="pl-c1">:puts</span>, <span class="pl-c1">Object</span>
+    member endpoint, <span class="pl-c1">:delete</span>, <span class="pl-c1">Object</span>
+  <span class="pl-k">end</span>
+
+  router.map(<span class="pl-c1">:statuses</span>, <span class="pl-c1">header:</span> <span class="pl-c1">HeaderMatcher</span>) <span class="pl-k">do</span>
+    collection <span class="pl-c1">:get</span>, <span class="pl-c1">Object</span>
+  <span class="pl-k">end</span>
+<span class="pl-k">end</span></pre></div>
+
+<h1>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h1>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem "earhart", "~&gt; 1.0"
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself with:</p>
+
+<pre><code>$ gem install earhart
+</code></pre>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+
+<h1>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h1>
+
+<ul>
+<li>1.0.0: Initial release</li>
+</ul>
+
+<h1>
+<a id="conduct" class="anchor" href="#conduct" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conduct</h1>
+
+<p>As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.</p>
+
+<p>We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, age, or religion.</p>
+
+<p>Examples of unacceptable behavior by participants include the use of sexual language or imagery, derogatory comments or personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.</p>
+
+<p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed from the project team.</p>
+
+<p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.</p>
+
+<p>This Code of Conduct is adapted from the <a href="http:contributor-covenant.org">Contributor Covenant</a>, version 1.0.0, available at <a href="http://contributor-covenant.org/version/1/0/0/">http://contributor-covenant.org/version/1/0/0/</a></p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>Copyright (c) 2014, 2015 Kurtis Rainbolt-Greene</p>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/krainboltgreene/earhart.gem">Earhart.gem</a> is maintained by <a href="https://github.com/krainboltgreene">krainboltgreene</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-18715035-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+

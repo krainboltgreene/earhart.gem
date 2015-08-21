@@ -4,6 +4,7 @@ require "earhart"
 # require "actiondispatch"
 require "lotus/router"
 require "usher"
+require "roda"
 
 puts ""
 puts "OS Name: #{`uname -a`}"
@@ -29,6 +30,30 @@ end
 
 LotusRouterRack = Rack::MockRequest.new(LotusTestRouter)
 
+class RodaTestRouter < Roda
+  route do |r|
+    r.get "accounts" do
+      Object
+    end
+
+    r.post "accounts" do
+      Object
+    end
+
+    r.get "accounts/:id" do |id|
+      Object
+    end
+
+    r.post "accounts/:id" do |id|
+      Object
+    end
+
+    r.delete "accounts/:id" do |id|
+      Object
+    end
+  end
+end
+
 Benchmark.ips do |analysis|
   analysis.time = 5
   analysis.warmup = 2
@@ -42,6 +67,8 @@ Benchmark.ips do |analysis|
     LotusRouterRack.put("/accounts/3")
   end
 
+  analysis.report("roda lookup") do
+    RodaTestRouter.app.call({"REQUEST_METHOD" => "POST", "PATH_INFO" => "/accounts/3", "SCRIPT_NAME" => ""})
   end
 
   # I was unable to get this to work.

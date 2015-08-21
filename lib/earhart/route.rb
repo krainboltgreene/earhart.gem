@@ -1,5 +1,6 @@
 module Earhart
-  # An individual key/value piece, the key being the request pattern and value being the receiver
+  # An individual key/value piece, the key being the request pattern and value
+  # being the receiver object
   class Route
     def initialize(pattern, receiver)
       @pattern = pattern

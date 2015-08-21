@@ -22,19 +22,20 @@ Using
 ``` ruby
 require "earhart"
 
-Earhart::Router.new do |router|
-  router.map(:accounts) do |endpoint|
-    collection endpoint, :get, Object
-    member endpoint, :get, Object
-    member endpoint, :post, Object
-    member endpoint, :puts, Object
-    member endpoint, :delete, Object
-  end
+router = Earhart::Router.new do |router|
+  router.member(verb: :get, resource: :accounts, receiver: Retrieve)
+  router.member(verb: :post, resource: :accounts, receiver: Create)
+  router.member(verb: :put, resource: :accounts, receiver: Update)
+  router.member(verb: :delete, resource: :accounts, receiver: Destroy)
 
-  router.map(:statuses, header: HeaderMatcher) do
-    collection :get, Object
-  end
+  router.collection(verb: :get, resource: :reports, receiver: List)
+  router.collection(verb: :post, resource: :reports, receiver: Create)
+  router.collection(verb: :put, resource: :reports, receiver: Replace)
+  router.collection(verb: :delete, resource: :reports, receiver: Dump)
 end
+
+request = "PUT /accounts/@krainboltgreene" # Request{PUT /accounts/@krainboltgreene}
+router.lookup(request) #=> Retrieve
 ```
 
 

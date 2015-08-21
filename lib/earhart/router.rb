@@ -1,24 +1,26 @@
 module Earhart
   class Router
-    def initialize
-      @routes = Earhart::Routes.new
+    def initialize(resource: nil, headers: {}, routes: Earhart::Routes.new([]))
+      @routes = routes
+      @resource = resource
+      @headers = headers
 
-      yield(self)
+      yield(self) if block_given?
     end
 
-    def collection(endpoint, verb, receiver)
-      @routes.add(Route.new(%r|#{verb.upcase} /#{endpoint}/|, receiver))
+    def collection(verb:, resource: @resource, headers: @headers, receiver:)
+      @routes.add(Pattern.new(verb: verb.upcase, resource: %r|/#{resource}/?|, headers: headers), receiver)
     end
 
-    def member(endpoint, verb, receiver)
-      @routes.add(Route.new(%r|#{verb.upcase} /#{endpoint}/(?<id>.+)|, receiver))
+    def member(verb:, resource: @resource, headers: @headers, receiver:)
+      @routes.add(Pattern.new(verb: verb.upcase, resource: %r|/#{resource}/(?<id>.+)/?|, headers: headers), receiver)
     end
 
-    def map(resource, &block)
-      instance_exec(resource, &block)
+    def resource(resource:, headers: {})
+      self.class.new(resource: resource, headers: headers, routes: @routes)
     end
 
-    def lookup(request)
+    def lookup(request:)
       @routes.find(request.to_s).receiver
     end
   end

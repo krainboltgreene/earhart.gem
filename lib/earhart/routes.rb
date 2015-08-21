@@ -3,7 +3,7 @@ module Earhart
   class Routes
     include Enumerable
 
-    def initialize(routes = [])
+    def initialize(routes)
       @collection = routes.to_list
     end
 

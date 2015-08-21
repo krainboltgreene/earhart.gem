@@ -7,8 +7,8 @@ module Earhart
       @collection = routes.to_list
     end
 
-    def add(route)
-      @collection = @collection.add(route)
+    def add(pattern, receiver)
+      @collection = @collection.add(Route.new(pattern, receiver))
     end
 
     def find(query)

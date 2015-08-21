@@ -10,16 +10,17 @@ module Earhart
       pattern === query
     end
 
-    def pattern
-      @pattern
-    end
-
     def receiver
       @receiver
     end
 
     def to_s
-      "#{self.class.name} #{pattern} -> #{receiver.class.name}"
+      "#{self.class.name}{#{pattern} -> #{receiver.to_s}}"
     end
+
+    def pattern
+      @pattern
+    end
+    private :pattern
   end
 end

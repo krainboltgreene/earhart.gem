@@ -31,25 +31,15 @@ end
 LotusRouterRack = Rack::MockRequest.new(LotusTestRouter)
 
 class RodaTestRouter < Roda
+  plugin :all_verbs
+
   route do |r|
-    r.get "accounts" do
-      Object
-    end
-
-    r.post "accounts" do
-      Object
-    end
-
-    r.get "accounts/:id" do |id|
-      Object
-    end
-
-    r.post "accounts/:id" do |id|
-      Object
-    end
-
-    r.delete "accounts/:id" do |id|
-      Object
+    r.on "accounts" do
+      r.get() { Object }
+      r.post() { Object }
+      r.get("/:id") { Object }
+      r.put("/:id") { Object }
+      r.delete("/:id") { Object }
     end
   end
 end
@@ -68,7 +58,9 @@ Benchmark.ips do |analysis|
   end
 
   analysis.report("roda lookup") do
-    RodaTestRouter.app.call({"REQUEST_METHOD" => "POST", "PATH_INFO" => "/accounts/3", "SCRIPT_NAME" => ""})
+    RodaTestRouter.app.call(Rack::MockRequest.env_for("/accounts/3",
+      "REQUEST_METHOD" => "PUT",
+    ))
   end
 
   # I was unable to get this to work.

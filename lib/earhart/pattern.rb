@@ -5,7 +5,7 @@ module Earhart
     end
 
     def ===(other)
-      Regexp.new(@struct.inspect) === other
+      Regexp.new(@struct.to_s) === other
     end
   end
 end

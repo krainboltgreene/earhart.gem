@@ -25,21 +25,20 @@ def path(size)
 end
 
 SMALL_SIZE = 10
-SMALL_DATA = generate_routes(10)
+SMALL_DATA = generate_routes(SMALL_SIZE)
 
-BIG_SIZE = 200
-BIG_DATA = generate_routes(200)
-
+BIG_SIZE = 1000
+BIG_DATA = generate_routes(BIG_SIZE)
 
 Benchmark.ips do |analysis|
   analysis.time = 5
   analysis.warmup = 2
 
   analysis.report("small (#{SMALL_SIZE})") do
-    SMALL_DATA.find(path(BIG_SIZE))
+    SMALL_DATA.find(path(SMALL_SIZE / 2))
   end
 
   analysis.report("big (#{BIG_SIZE})") do
-    BIG_DATA.find(path(BIG_SIZE))
+    BIG_DATA.find(path(BIG_SIZE / 2))
   end
 end

@@ -7,5 +7,9 @@ module Earhart
     def ===(other)
       Regexp.new(@struct.to_s) === other
     end
+
+    def to_s
+      "#{self.class.name}{#{@struct.inspect}}"
+    end
   end
 end

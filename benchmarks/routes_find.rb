@@ -13,7 +13,7 @@ Benchmark::IPS.options[:format] = :raw
 
 
 def generate_route(id)
-  Earhart::Route.new(%r|GET /person/#{id}|, Object)
+  Earhart::Route.new(Earhart::Pattern.new(verb: "GET", resource: "/persons/#{id}"), Object)
 end
 
 def generate_routes(count)
@@ -21,7 +21,7 @@ def generate_routes(count)
 end
 
 def path(size)
-  "GET /person/#{rand(1..size)}"
+  "verb=\"GET\" resource=\"/persons/#{rand(1..size)}\""
 end
 
 SMALL_SIZE = 10

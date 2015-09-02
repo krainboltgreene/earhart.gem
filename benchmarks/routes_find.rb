@@ -11,7 +11,6 @@ puts ""
 
 Benchmark::IPS.options[:format] = :raw
 
-
 def generate_route(id)
   Earhart::Route.new(Earhart::Pattern.new(verb: "GET", resource: "/persons/#{id}"), Object)
 end
@@ -34,11 +33,11 @@ Benchmark.ips do |analysis|
   analysis.time = 5
   analysis.warmup = 2
 
-  analysis.report("small (#{SMALL_SIZE})") do
+  analysis.report("Small (#{SMALL_SIZE})") do
     SMALL_DATA.find(path(SMALL_SIZE / 2))
   end
 
-  analysis.report("big (#{BIG_SIZE})") do
+  analysis.report("Big (#{BIG_SIZE})") do
     BIG_DATA.find(path(BIG_SIZE / 2))
   end
 end

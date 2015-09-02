@@ -16,7 +16,7 @@ module Earhart
     end
 
     def to_s
-      "#{self.class.name}{#{pattern} -> #{receiver.to_s}}"
+      "#{self.class.name}{#{pattern} -> #{receiver}}"
     end
 
     def pattern

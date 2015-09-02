@@ -17,13 +17,7 @@ Benchmark.ips do |analysis|
 
   analysis.report("Router Mapping") do
     Earhart::Router.new do |router|
-      router.map(:accounts) do |endpoint|
-        collection(endpoint, :get, Object)
-        collection(endpoint, :post, Object)
-        member(endpoint, :get, Object)
-        member(endpoint, :put, Object)
-        member(endpoint, :delete, Object)
-      end
+      router.collection(verb: :get, resource: :accounts, receiver: Object)
     end
   end
 end

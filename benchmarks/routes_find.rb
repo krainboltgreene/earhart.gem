@@ -32,6 +32,7 @@ BIG_DATA = generate_routes(BIG_SIZE)
 Benchmark.ips do |analysis|
   analysis.time = 5
   analysis.warmup = 2
+  analysis.compare!
 
   analysis.report("Small (#{SMALL_SIZE})") do
     SMALL_DATA.find(path(SMALL_SIZE / 2))

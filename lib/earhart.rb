@@ -3,6 +3,7 @@ require "hamster/hash"
 require "scrawl"
 
 module Earhart
+  require_relative "earhart/null"
   require_relative "earhart/pattern"
   require_relative "earhart/route"
   require_relative "earhart/router"

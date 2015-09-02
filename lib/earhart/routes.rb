@@ -12,7 +12,7 @@ module Earhart
     end
 
     def find(query)
-      @collection.find { |member| member.match(query) }
+      @collection.find { |member| member.match(query) } || Null::Route.new
     end
 
     def each(&block)

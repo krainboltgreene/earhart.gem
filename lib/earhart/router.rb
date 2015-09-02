@@ -1,6 +1,6 @@
 module Earhart
   class Router
-    def initialize(resource: nil, headers: {}, routes: Earhart::Routes.new([]))
+    def initialize(resource: nil, headers: Hamster::EmptyHash, routes: Earhart::Routes.new(Hamster::EmptyList))
       @routes = routes
       @resource = resource
       @headers = headers
@@ -16,7 +16,7 @@ module Earhart
       @routes.add(Pattern.new(verb: verb.upcase, resource: %r|/#{resource}/(?<id>.+)/?|, headers: headers), receiver)
     end
 
-    def resource(resource:, headers: {})
+    def resource(resource:, headers: Hamster::EmptyHash)
       self.class.new(resource: resource, headers: headers, routes: @routes)
     end
 

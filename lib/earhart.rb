@@ -1,4 +1,5 @@
-require "hamster"
+require "hamster/list"
+require "hamster/hash"
 require "scrawl"
 
 module Earhart

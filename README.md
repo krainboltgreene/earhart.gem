@@ -34,8 +34,8 @@ router = Earhart::Router.new do |router|
   router.collection(verb: :delete, resource: :reports, receiver: Dump)
 end
 
-request = "PUT /accounts/@krainboltgreene" # Request{PUT /accounts/@krainboltgreene}
-router.lookup(request) #=> Retrieve
+request = "verb=\"PUT\" resource=\"/accounts/@krainboltgreene\"" # Request{PUT /accounts/@krainboltgreene}
+router.lookup(request: request) #=> Retrieve
 ```
 
 

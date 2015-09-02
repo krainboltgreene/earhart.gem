@@ -9,11 +9,11 @@ module Earhart
     end
 
     def collection(verb:, resource: @resource, headers: @headers, receiver:)
-      @routes.add(Pattern.new(verb: verb.upcase, resource: %r|/#{resource}/?|, headers: headers), receiver)
+      @routes.add(Pattern.new(verb: verb.upcase, resource: "/#{resource}/?", headers: headers), receiver)
     end
 
     def member(verb:, resource: @resource, headers: @headers, receiver:)
-      @routes.add(Pattern.new(verb: verb.upcase, resource: %r|/#{resource}/(?<id>.+)/?|, headers: headers), receiver)
+      @routes.add(Pattern.new(verb: verb.upcase, resource: "/#{resource}/(?<id>.+)/?", headers: headers), receiver)
     end
 
     def resource(resource:, headers: Hamster::EmptyHash)

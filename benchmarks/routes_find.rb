@@ -11,12 +11,26 @@ puts ""
 
 Benchmark::IPS.options[:format] = :raw
 
-def generate_route(id)
-  Earhart::Route.new(Earhart::Pattern.new(verb: "GET", resource: "/persons/#{id}"), Object)
-end
+# def generate_route(id)
+#   Hamster::Hash.new("/persons/#{id}" => Object)
+# end
+#
+# def generate_routes(count)
+#   Earhart::Routes.new)
+# end
+#
+
+#
+# SMALL_SIZE = 10
+# SMALL_ROUTES = generate_routes(SMALL_SIZE)
+#
+# BIG_SIZE = 1000
+# BIG_DATA = generate_routes(BIG_SIZE)
 
 def generate_routes(count)
-  Earhart::Routes.new(count.times.map { |index| generate_route(index) })
+  Earhart::Routes.new.tap do |routes|
+    count.times { |i| routes.add("GET", "/tests/#{i}", Hamster::EmptyHash, Object) }
+  end
 end
 
 def path(size)
@@ -24,10 +38,8 @@ def path(size)
 end
 
 SMALL_SIZE = 10
-SMALL_DATA = generate_routes(SMALL_SIZE)
+SMALL_ROUTES = generate_routes(SMALL_SIZE)
 
-BIG_SIZE = 1000
-BIG_DATA = generate_routes(BIG_SIZE)
 
 Benchmark.ips do |analysis|
   analysis.time = 5
@@ -35,10 +47,10 @@ Benchmark.ips do |analysis|
   analysis.compare!
 
   analysis.report("Small (#{SMALL_SIZE})") do
-    SMALL_DATA.find(path(SMALL_SIZE / 2))
+    SMALL_ROUTES.find("GET", "/persons/#{SMALL_SIZE / 2}", Hamster::EmptyHash)
   end
-
-  analysis.report("Big (#{BIG_SIZE})") do
-    BIG_DATA.find(path(BIG_SIZE / 2))
-  end
+  #
+  # analysis.report("Big (#{BIG_SIZE})") do
+  #   BIG_DATA.find(path(BIG_SIZE / 2))
+  # end
 end

@@ -1,26 +1,39 @@
 module Earhart
-  # A collection of route objects, used for finding a particular route
   class Routes
     include Enumerable
+    NULL_MATCH = Null::Match.new
+    DEFAULT_COLLECTION = Hamster::EmptyHash
 
-    def initialize(routes)
-      @collection = routes.to_list
+    def initialize
+      @collection = DEFAULT_COLLECTION
     end
 
-    def add(pattern, receiver)
-      @collection = @collection.add(Route.new(pattern, receiver))
+    def add(verb, resource, headers, receiver)
+      @collection = @collection.put(Scrawl.new(verb: verb, resource: resource, headers: headers), receiver)
     end
 
-    def find(query)
-      @collection.find { |member| member.match(query) } || Null::Route.new
+    def find(verb, resource, headers)
+      match(Scrawl.new(verb: verb, resource: resource, headers: headers).to_s)
     end
 
     def each(&block)
       @collection.each(&block)
     end
 
-    def to_s
-      @collection.map(&:to_s).join("; ")
+    private def match(query)
+      string_match(query) || regexp_match(Regexp.new(query)) || Null::MATCH
+    end
+
+    private def string_match(query)
+      collection.fetch(query.to_s)
+    end
+
+    private def regexp_match(query)
+      collection.find { |pattern, receiver| pattern.match(query) }.last
+    end
+
+    private def collection
+      @collection
     end
   end
 end

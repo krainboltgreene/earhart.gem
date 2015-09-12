@@ -114,3 +114,25 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+require "earhart"
+
+router = Earhart::Router.new do |router|
+  router.member(verb: :get, resource: :accounts, receiver: Object)
+  router.member(verb: :post, resource: :accounts, receiver: Object)
+  router.member(verb: :put, resource: :accounts, receiver: Object)
+  router.member(verb: :delete, resource: :accounts, receiver: Object)
+
+  router.collection(verb: :get, resource: :reports, receiver: Object)
+  router.collection(verb: :post, resource: :reports, receiver: Object)
+  router.collection(verb: :put, resource: :reports, receiver: Object)
+  router.collection(verb: :delete, resource: :reports, receiver: Object)
+end
+
+request = "verb=\"PUT\" resource=\"/accounts/@krainboltgreene\""
+router.lookup(request: request)
+
+route = @collection[5]
+pattern = route.instance_variable_get(:@pattern)
+struct = pattern.instance_variable_get(:@struct)
+regexp = Regexp.new(struct.to_s)

@@ -1,9 +1,6 @@
 module Earhart
   module Null
-    class Receiver
-      def initialize
-
-      end
+    class Receiver < BasicObject
     end
   end
 end
